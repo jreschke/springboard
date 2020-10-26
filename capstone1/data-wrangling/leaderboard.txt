@@ -1,0 +1,2 @@
+scrapy shell "https://codstats.net/leaderboards"
+response.xpath("//a[contains(@class, 'white')]//@href").extract()

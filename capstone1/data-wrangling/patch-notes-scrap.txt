@@ -1,0 +1,23 @@
+scarpy shell "https://codmwstore.com/?s=call+of+duty+patch+notes"
+response.xpath("//a[contains(@class, 'post-thumbnail  kadence-thumbnail-ratio-2-3')]//@href").extract()
+
+scrapy shell "https://codmwstore.com/18-may-2020-call-of-duty-modern-warfare-warzone-patch-notes/"
+response.xpath("//h1[contains(@class,'entry-title')]/text()").extract()
+
+titles = response.xpath("//div[contains(@class, 'entry-content single-content')]//h3//strong/text()").extract()
+weapon_index = titles.index('WEAPONS')+1
+#will need to make a note for when weapons title is not there
+
+response.xpath("//div[contains(@class, 'entry-content single-content')]//h3[weapon_index]/following-sibling::ul/li/text()
+    ...: ").extract()
+
+response.xpath("//div[contains(@class, 'entry-content single-content')]//ul//li/text()").extract()
+response.xpath("//div[contains(@class, 'entry-content single-content')]//ul//li//ul//li/text()").extract()
+
+#how to get first element after weapons, need to figure out how to get all till next header
+response.xpath("//div[contains(@class, 'entry-content single-content')]//h3[5]/following-sibling::ul/li/text()
+    ...: ").get()
+
+
+/html/body/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[1]
+

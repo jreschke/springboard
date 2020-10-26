@@ -1,0 +1,4 @@
+scrapy shell "https://codstats.net/weapons"
+response.xpath("//div[contains(@style, 'font-weight:bold;color:#fff;width:calc(100% - 20px);padding:10px;padding-top:5px;text-align:left;')]/text()").extract()
+
+response.xpath("//div[contains(@style, 'width:calc(100% - 20px);padding:5 10px;')]//div[contains(@style, 'overflow:auto;font-size:12px;margin:5 0 4 0px;')]//div[contains(@style,'float:right;')]/text()").extract()
